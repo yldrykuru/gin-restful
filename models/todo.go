@@ -1,19 +1,21 @@
 // validators/todo.go
 package models
 
-import "github.com/go-playground/validator/v10"
+import (
+	"github.com/go-playground/validator/v10"
+)
 
-// Todo modelini tanımla
+// Todo represents the model for a todo item.
 type Todo struct {
-	ID     int    `json:"id" validate:"required"`
+	BaseModel
 	Title  string `json:"title" validate:"required,min=3,max=50"`
 	Status bool   `json:"status" validate:"required"`
 }
 
-// Validate fonksiyonunu tanımla
+// Validate performs validation on the Todo model using struct tags.
 func (t *Todo) Validate() error {
 	validate := validator.New()
 
-	// Struct tag'lerine göre doğrulama yap
+	// Perform validation based on struct tags.
 	return validate.Struct(t)
 }
