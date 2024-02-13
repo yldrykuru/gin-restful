@@ -6,23 +6,38 @@ This project demonstrates the creation of a basic RESTful API using the Golang p
 
 The project file and folder structure is as follows:
 
-    .
-    ├── configs
-    ├── controllers
-    ├── db
-    ├── interfaces
-    ├── middlewares
-    ├── models
-    ├── repositories
-    ├── routes
-    ├── services
-    ├── utils
-    ├── .env
-    ├── .env.example
-    ├── Dockerfile
-    ├── go.mod
-    ├── go.sum
-    ├── main.go
+    - configs
+    - controllers
+      - todo_controller.go
+    - db
+      - db.go
+      - migration.go
+    - interfaces
+    - middlewares
+      - auth_middleware.go
+      - cors_middleware.go
+      - rate_limit_middleware.go
+    - models
+      - base.go
+      - todo.go
+    - repositories
+      - abstract_repository.go
+      - todo_repository.go
+    - routes
+      - auth.go
+      - routes.go
+      - todos.go
+    - services
+      - abstract_service.go
+      - todo_service.go
+    - utils
+      - utils.go
+    - .env
+    - .env.example
+    - Dockerfile
+    - go.mod
+    - go.sum
+    - main.go
 
   
 ## Key Concepts
